@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+services:
+  app:
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: ""
+      DB_NAME: api_productos
+      PRECIO_USD: "300"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: mysql_db
+    ports:
+      - "3307:3306" 
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_DATABASE: api_productos
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./docker/database:/docker-entrypoint-initdb.d
+
+volumes:
+  db_data:
