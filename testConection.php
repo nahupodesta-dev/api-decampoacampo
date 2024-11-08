@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/app/config/config.php';
-require_once __DIR__ . '/app/Lib/Database.php';
+require_once __DIR__ . '/app/lib/Database.php';
 
 use App\Lib\Database;
 
