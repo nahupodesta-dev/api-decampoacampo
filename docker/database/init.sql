@@ -11,6 +11,6 @@ CREATE TABLE IF NOT EXISTS productos (
 );
 
 INSERT INTO productos (nombre, descripcion, precio) VALUES
-('Producto A', 'Descripción del producto A', 1000.00),
-('Producto B', 'Descripción del producto B', 1500.50),
-('Producto C', 'Descripción del producto C', 2000.75);
+('Producto A', 'Desc del producto A', 1000.00),
+('Producto B', 'Desc del producto B', 1500.50),
+('Producto C', 'Desc del producto C', 2000.75);
